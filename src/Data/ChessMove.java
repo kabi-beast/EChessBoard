@@ -21,7 +21,7 @@ public class ChessMove {
         return fromRank;
     }
 
-    public char getToFile() {
+    public int getToFile() {
         return toFile;
     }
 
