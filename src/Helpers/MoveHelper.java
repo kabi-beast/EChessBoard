@@ -8,13 +8,20 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class MoveHelper {
-    public static PhoneCoOrdinates getPhoneCoOrdinates(ChessMove move) {
+    public static PhoneCoOrdinates getPhoneCoOrdinates(ChessMove move, String color) {
         System.out.println("Finding the phone co-ordinates");
+        if ( color.equalsIgnoreCase("w") || color.equalsIgnoreCase("white")) {
+            return new PhoneCoOrdinates(
+                    (float) (67.5 + 135.0 * (move.getFromFile() - 'a')),
+                    (float) (1756.5 - (135.0 * (move.getFromRank() - 1))),
+                    (float) (67.5 + 135.0 * (move.getToFile() - 'a')),
+                    (float) (1756.5 - (135.0 * (move.getToRank() - 1))));
+        }
         return new PhoneCoOrdinates(
-                (float) (67.5 + 135.0 * (move.getFromFile() - 'a')),
-                (float) (1756.5 - (135.0 * (move.getFromRank() - 1))),
-                (float) (67.5 + 135.0 * (move.getToFile() - 'a')),
-                (float) (1756.5 - (135.0 * (move.getToRank() - 1))));
+                (float) (67.5 + 135.0 * ('h' - move.getFromFile())),
+                (float) (1756.5 - (135.0 * (8 - move.getFromRank()))),
+                (float) (67.5 + 135.0 * ('h' - move.getToFile())),
+                (float) (1756.5 - (135.0 * (8 - move.getToRank()))));
     }
 
     public static void makeMove(PhoneCoOrdinates coOrdinates) {

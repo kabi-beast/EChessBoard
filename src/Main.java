@@ -11,6 +11,10 @@ public class Main {
 
         System.out.println("Welcome to kabilan's e-ChessBoard");
 
+        System.out.println("Enter your color");
+        System.out.println("(W)hite or (B)lack?");
+        String color = scanner.nextLine();
+
         while (true) {
             // Get input for fromFile
             System.out.println("Enter the starting file (a-h): ");
@@ -30,7 +34,7 @@ public class Main {
 
             // Create a new ChessMove object
             ChessMove move = new ChessMove(fromFile, fromRank, toFile, toRank);
-            textToMoveHandler.handle(move);
+            textToMoveHandler.handle(move, color);
 
             // Ask if the user wants to continue
             System.out.println("Do you want to enter another move? (yes/no): ");
@@ -39,6 +43,7 @@ public class Main {
             if (continueInput.equalsIgnoreCase("no")) {
                 break;  // Exit the loop if the user enters 'no'
             }
+
         }
 
         scanner.close();
