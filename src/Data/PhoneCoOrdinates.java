@@ -1,31 +1,31 @@
 package Data;
 
 public class PhoneCoOrdinates {
-    private int fromX;
-    private int fromY;
-    private int toX;
-    private int toY;
+    private float fromX;
+    private float fromY;
+    private float toX;
+    private float toY;
 
-    public PhoneCoOrdinates(int fromX, int fromY, int toX, int toY) {
+    public PhoneCoOrdinates(float fromX, float fromY, float toX, float toY) {
         this.fromX = fromX;
         this.fromY = fromY;
         this.toX = toX;
         this.toY = toY;
     }
 
-    public int getFromX() {
+    public float getFromX() {
         return fromX;
     }
 
-    public int getFromY() {
+    public float getFromY() {
         return fromY;
     }
 
-    public int getToX() {
+    public float getToX() {
         return toX;
     }
 
-    public int getToY() {
+    public float getToY() {
         return toY;
     }
 }
