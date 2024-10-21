@@ -1,6 +1,7 @@
 package Handlers;
 
 import Data.ChessMove;
+import Steps.MoveToTextHandler;
 import Steps.TextToMoveHandler;
 
 import java.util.Scanner;
@@ -10,6 +11,8 @@ public class TerminalInputHandler implements InputHandler {
     public void handleInput() {
         Scanner scanner = new Scanner(System.in);
         StepHandler textToMoveHandler = new TextToMoveHandler();
+        StepHandler moveToTextHandler = new MoveToTextHandler();
+        textToMoveHandler.setNext(moveToTextHandler);
 
         System.out.println("Enter your color");
         System.out.println("(W)hite or (B)lack?");
