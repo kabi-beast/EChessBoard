@@ -37,6 +37,11 @@ public class MoveHelper {
         executeCommand(command2);
     }
 
+    public static void takeScreenShot(String fileName) {
+        String command = "adb shell screencap /sdcard/" + fileName;
+        executeCommand(command);
+    }
+
     private static void executeCommand(String command) {
         try {
             // Execute the command
