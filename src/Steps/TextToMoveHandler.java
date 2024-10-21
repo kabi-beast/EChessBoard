@@ -17,5 +17,6 @@ public class TextToMoveHandler implements StepHandler {
         System.out.println("Moving from " + move.getFromFile() + move.getFromRank() + " to " + move.getToFile() + move.getToRank());
         PhoneCoOrdinates phoneCoOrdinates = MoveHelper.getPhoneCoOrdinates(move);
         System.out.println("Phone Co Ordinates: " + phoneCoOrdinates.getFromX() + " " + phoneCoOrdinates.getFromY() + " to " + phoneCoOrdinates.getToX() + " " + phoneCoOrdinates.getToY());
+        MoveHelper.makeMove(phoneCoOrdinates);
     }
 }
