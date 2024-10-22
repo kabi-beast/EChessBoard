@@ -44,6 +44,9 @@ public class MoveHelper {
 
     public static ChessMove isMoveMade(String imageFile1, String imageFile2) {
         // placeHolder for code to compare two images and determine the move made by the opponent
+        // pull both the images to local disk
+        executeCommand("adb pull /sdcard/" + imageFile1 + " .");
+        executeCommand("adb pull /sdcard/" + imageFile2 + " .");
         return new ChessMove('e', 2, 'e', 4);
     }
 

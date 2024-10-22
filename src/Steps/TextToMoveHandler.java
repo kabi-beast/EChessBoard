@@ -18,6 +18,11 @@ public class TextToMoveHandler implements StepHandler {
         PhoneCoOrdinates phoneCoOrdinates = MoveHelper.getPhoneCoOrdinates(move, color);
         System.out.println("Phone Co Ordinates: " + phoneCoOrdinates.getFromX() + " " + phoneCoOrdinates.getFromY() + " to " + phoneCoOrdinates.getToX() + " " + phoneCoOrdinates.getToY());
         MoveHelper.makeMove(phoneCoOrdinates);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         MoveHelper.takeScreenShot("screenshotBefore.png");
         if (nextStepHandler != null) {
             nextStepHandler.handle(move, color);  // Pass to the next handler if available
