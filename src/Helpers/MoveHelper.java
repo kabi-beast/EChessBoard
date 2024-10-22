@@ -42,6 +42,11 @@ public class MoveHelper {
         executeCommand(command);
     }
 
+    public static ChessMove isMoveMade(String imageFile1, String imageFile2) {
+        // placeHolder for code to compare two images and determine the move made by the opponent
+        return new ChessMove('e', 2, 'e', 4);
+    }
+
     private static void executeCommand(String command) {
         try {
             // Execute the command
